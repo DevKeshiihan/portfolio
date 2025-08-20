@@ -13,7 +13,7 @@ const Header = () => (
   >
     <div className="inline-block relative group">
       <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] sm:text-lg flex items-center justify-center gap-2">
-        About Me
+        ABOUT ME
       </h2>
     </div>
   </div>

@@ -5,38 +5,21 @@ import { ProjectDetailDialog } from "../components/ProjectDetail";
 const projects = [
   {
     id: 1,
-    title: "Analytics Dashboard",
-    description:
-      "A comprehensive analytics dashboard built with React and D3.js, featuring real-time data visualization, customizable charts, and interactive filtering capabilities.",
+    title: "Movie Explorer",
+
     fullDescription:
-      "This advanced analytics dashboard was built to help businesses make data-driven decisions through intuitive visualizations. The project involved complex data processing, real-time updates, and a highly interactive user interface. I designed the architecture to handle large datasets efficiently while maintaining smooth user interactions.",
-    image:
-      "https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    technologies: [
-      "React",
-      "TypeScript",
-      "D3.js",
-      "Tailwind CSS",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-    ],
+      "Movie Explorer is a modern and responsive React app that lets users discover, search, and explore movies with ease. Featuring a sidebar navigation, real-time search, favorite management, and detailed movie info, the app delivers a smooth and engaging user experience for film enthusiasts",
+    image: "/Movie Explorer.png",
+    technologies: ["React", "Tailwind CSS", "Material UI", "TMDb API"],
     features: [
-      "Real-time data visualization with WebSocket connections",
-      "Interactive charts and graphs with zoom and pan capabilities",
-      "Customizable dashboard layouts with drag-and-drop functionality",
-      "Advanced filtering and search capabilities",
-      "Export functionality for reports in PDF and Excel formats",
+      "Responsive design adapting to all screen sizes",
+      "Clean and accessible navigation menu placed on the side for quick access to all sections.",
+      "instantly search for movies using the TMDb API",
+      "save and manage favorite movies with localStorage",
+      "optimized for desktop, tablet, and mobile with a fluid layout",
       "Role-based access control and user management",
     ],
-    challenges: [
-      "Optimized rendering performance for large datasets using virtualization",
-      "Implemented efficient caching strategies with Redis for real-time updates",
-      "Created responsive design that works seamlessly across all device sizes",
-      "Built robust error handling and fallback mechanisms for data failures",
-    ],
-    duration: "4 months",
-    teamSize: "Solo Project",
+    duration: "2025-06-20",
     role: "Full-Stack Developer",
     liveUrl: "https://analytics-demo.com",
     githubUrl: "https://github.com/yourusername/analytics-dashboard",
@@ -66,14 +49,8 @@ const projects = [
       "Money transfer between accounts and external banks",
       "Investment portfolio tracking and management",
     ],
-    challenges: [
-      "Implemented end-to-end encryption for all financial data transmission",
-      "Optimized app performance for smooth animations and quick loading times",
-      "Ensured compliance with banking regulations and security standards",
-      "Created seamless offline functionality with data synchronization",
-    ],
-    duration: "6 months",
-    teamSize: "3 developers",
+
+    duration: "2025-06-20",
     role: "Lead Mobile Developer",
     liveUrl: "https://banking-app-demo.com",
     githubUrl: "https://github.com/yourusername/mobile-banking-app",
@@ -104,14 +81,8 @@ const projects = [
       "Order tracking and shipment management",
       "Inventory management with low-stock alerts",
     ],
-    challenges: [
-      "Built scalable database schema to handle complex product variations",
-      "Implemented secure payment processing with PCI compliance",
-      "Created responsive design optimized for mobile commerce",
-      "Developed real-time inventory synchronization across multiple channels",
-    ],
-    duration: "8 months",
-    teamSize: "5 developers",
+
+    duration: "2025-06-20",
     role: "Full-Stack Developer",
     liveUrl: "https://ecommerce-demo.com",
     githubUrl: "https://github.com/yourusername/ecommerce-platform",
@@ -134,14 +105,7 @@ const projects = [
       "Contact form with email integration",
       "Performance optimized with lazy loading and code splitting",
     ],
-    challenges: [
-      "Achieved 100/100 Lighthouse performance score across all metrics",
-      "Implemented accessible design following WCAG guidelines",
-      "Created custom animations that enhance UX without affecting performance",
-      "Built reusable component library for consistent design patterns",
-    ],
-    duration: "2 months",
-    teamSize: "Solo Project",
+    duration: "2025-06-20",
     role: "Frontend Developer & Designer",
     liveUrl: "https://your-portfolio.com",
     githubUrl: "https://github.com/yourusername/portfolio",
@@ -157,29 +121,24 @@ export function Projects() {
     setIsDialogOpen(true);
   };
 
-  
-  
+  const Header = () => (
+    <div className="flex flex-col items-center justify-center mb-12 px-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] sm:text-lg flex items-center justify-center gap-2">
+        PROJECTS
+      </h2>
+    </div>
+  );
 
   return (
-    <section id="Projects" className="py-16 px-4 max-w-7xl mx-auto">
-      <div
-        className="text-center lg:mb-8 mb-2 px-[5%]"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <div className="inline-block relative group">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] sm:text-lg flex items-center justify-center gap-2">
-            Projects
-          </h2>
-        </div>
-      </div>
+    <section id="projects" className="py-16 px-4 max-w-7xl mx-auto">
+      <Header />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6 mt-20">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
             title={project.title}
-            description={project.description}
+            fullDescription={project.fullDescription}
             image={project.image}
             technologies={project.technologies}
             liveUrl={project.liveUrl}
